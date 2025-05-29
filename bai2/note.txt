@@ -1,0 +1,48 @@
+# PHÂN TÍCH TƯ DUY GIẢI QUYẾT BÀI TOÁN TÍNH TIỀN ĐIỆN
+
+## 1. PHÂN TÍCH YÊU CẦU
+- Bài toán tính tiền điện theo bậc thang
+- Input: 
+  + Tên khách hàng (chuỗi)
+  + Số Kw tiêu thụ (số nguyên dương)
+- Output: 
+  + Số tiền phải trả (định dạng VNĐ)
+  + Hiển thị thông tin khách hàng và kết quả
+
+## 2. TƯ DUY GIẢI THUẬT
+- Xác định các mức giá theo bậc:
+  + Bậc 1: 0-50kw
+  + Bậc 2: 51-100kw
+  + Bậc 3: 101-200kw 
+  + Bậc 4: 201-350kw
+  + Bậc 5: >350kw
+- Cách tính:
+  + Kiểm tra số Kw thuộc bậc nào
+  + Tính tiền cho từng bậc rồi cộng dồn
+  + Bậc cuối: tính phần vượt mức
+
+## 3. THIẾT KẾ CHƯƠNG TRÌNH
+### Front-end (HTML/CSS)
+- Form nhập liệu:
+  + Ô nhập tên (text)
+  + Ô nhập số Kw (number)
+  + Nút tính toán
+- Khu vực hiển thị kết quả
+- Validate cơ bản:
+  + Tên không để trống
+  + Số Kw > 0
+
+### Back-end (JavaScript)
+- Hàm tính tiền:
+  + Sử dụng if-else hoặc switch-case
+  + Tính toán theo từng bậc
+- Xử lý hiển thị:
+  + Định dạng tiền VNĐ (toLocaleString)
+  + Hiển thị chi tiết
+
+## 4. CÁC TRƯỜNG HỢP CẦN KIỂM TRA
+- Số Kw = 0
+- Số Kw nằm ở ranh giới các bậc (50, 100, 200, 350)
+- Số Kw lớn (>1000)
+- Nhập chữ vào ô số Kw
+- Không nhập tên
