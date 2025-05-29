@@ -1,0 +1,72 @@
+# PHÂN TÍCH BÀI TOÁN TÍNH TIỀN DỊCH VỤ CÁP
+
+## 1. YÊU CẦU BÀI TOÁN
+- Tính hóa đơn cho 2 loại khách hàng:
+  + Nhà dân
+  + Doanh nghiệp
+- Cần xử lý các trường hợp đặc biệt:
+  + Ẩn/hiện trường nhập liệu theo loại khách hàng
+  + Validate dữ liệu đầu vào
+
+## 2. PHÂN TÍCH CHỨC NĂNG
+
+### Input cần nhập:
+- Mã khách hàng (text)
+- Loại khách hàng (radio button)
+- Số kênh cao cấp (number)
+- Số kết nối (number, chỉ hiển thị khi chọn Doanh nghiệp)
+
+### Công thức tính:
+#### Nhà dân:
+- Phí xử lý: $4.5
+- Phí dịch vụ cơ bản: $20.5
+- Kênh cao cấp: $7.5/kênh
+- Tổng = Phí xử lý + Phí dịch vụ + (Số kênh × 7.5)
+
+#### Doanh nghiệp:
+- Phí xử lý: $15
+- Phí dịch vụ: 
+  + $75 (cho ≤10 kết nối)
+  + $75 + (Số kết nối - 10) × $5 (cho >10 kết nối)
+- Kênh cao cấp: $50/kênh
+- Tổng = Phí xử lý + Phí dịch vụ + (Số kênh × 50)
+
+## 3. THIẾT KẾ GIẢI PHÁP
+
+### Front-end (HTML):
+- Form nhập liệu với:
+  + Text input cho mã KH
+  + Radio button chọn loại KH
+  + Number input cho số kênh
+  + Number input cho số kết nối (ẩn/disabled khi chọn Nhà dân)
+- Khu vực hiển thị kết quả chi tiết
+
+### Back-end (JavaScript):
+1. Hàm toggleConnectionInput():
+   - Xử lý ẩn/hiện trường số kết nối
+   - Thay đổi trạng thái required
+
+2. Hàm calculateBill():
+   - Validate input
+   - Tính toán theo loại KH
+   - Xử lý phí kết nối thêm (Doanh nghiệp)
+
+3. Hàm displayBill():
+   - Hiển thị hóa đơn chi tiết
+   - Định dạng tiền tệ
+
+## 4. CÁC TRƯỜNG HỢP ĐẶC BIỆT CẦN XỬ LÝ
+- Không nhập mã KH
+- Số kênh/kết nối âm
+- Chọn Doanh nghiệp nhưng không nhập số kết nối
+- Số kết nối rất lớn (>1000)
+- Nhập chữ vào ô số
+
+## 5. KIỂM THỬ
+Cần test các trường hợp:
+- Nhà dân với 0, 5, 10 kênh
+- Doanh nghiệp với:
+  + ≤10 kết nối
+  + >10 kết nối
+  + 0 kênh
+- Các trường hợp nhập liệu không hợp lệ

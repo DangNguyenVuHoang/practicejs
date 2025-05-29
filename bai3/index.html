@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Thuế Thu Nhập Cá Nhân</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+        }
+        .tax-info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f4fd;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>TÍNH THUẾ THU NHẬP CÁ NHÂN</h1>
+    
+    <div class="form-group">
+        <label for="name">Họ và tên:</label>
+        <input type="text" id="name" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="income">Tổng thu nhập năm (triệu đồng):</label>
+        <input type="number" id="income" min="0" step="0.01" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="dependents">Số người phụ thuộc:</label>
+        <input type="number" id="dependents" min="0" required>
+    </div>
+    
+    <button onclick="calculateTax()">TÍNH THUẾ</button>
+    
+    <div id="result"></div>
+    
+    <div class="tax-info">
+        <h3>Thông tin các bậc thuế</h3>
+        <table>
+            <tr>
+                <th>Thu nhập chịu thuế (triệu)</th>
+                <th>Thuế suất (%)</th>
+            </tr>
+            <tr>
+                <td>Đến 60</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Trên 60 đến 120</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Trên 120 đến 210</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>Trên 210 đến 384</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Trên 384 đến 624</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>Trên 624 đến 960</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Trên 960</td>
+                <td>35</td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

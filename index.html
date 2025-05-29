@@ -1,17 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Menu Bài Tập JavaScript</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .menu-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            cursor: pointer;
+        }
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .menu-item h2 {
+            color: #3498db;
+            margin-top: 0;
+        }
+        .menu-item p {
+            color: #7f8c8d;
+        }
+        .folder-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+            color: #3498db;
+        }
+    </style>
 </head>
 <body>
-    <h1>Giao diện bài làm</h1>
-    <div>
-        <div>Bài Tập 1</div>
-        <div>Bài Tập 2</div>
-        <div>Bài Tập 3</div>
-        <div>Bài Tập 4</div>
+    <h1>DANH SÁCH BÀI TẬP JAVASCRIPT</h1>
+    
+    <div class="menu-container">
+        <div class="menu-item" onclick="navigateTo('bai1')">
+            <div class="folder-icon">📁</div>
+            <h2>Bài 1</h2>
+            <p>Quản lý tuyển sinh</p>
+        </div>
+        
+        <div class="menu-item" onclick="navigateTo('bai2')">
+            <div class="folder-icon">📁</div>
+            <h2>Bài 2</h2>
+            <p>Tính tiền điện</p>
+        </div>
+        
+        <div class="menu-item" onclick="navigateTo('bai3')">
+            <div class="folder-icon">📁</div>
+            <h2>Bài 3</h2>
+            <p>Tính thuế thu nhập cá nhân</p>
+        </div>
+        
+        <div class="menu-item" onclick="navigateTo('bai4')">
+            <div class="folder-icon">📁</div>
+            <h2>Bài 4</h2>
+            <p>Tính tiền dịch vụ cáp</p>
+        </div>
     </div>
+
+    <script>
+        function navigateTo(folderName) {
+            // Chuyển hướng đến thư mục bài tập tương ứng
+            window.location.href = `${folderName}/index.html`;
+           
+        }
+    </script>
 </body>
 </html>

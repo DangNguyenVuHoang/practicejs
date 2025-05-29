@@ -1,0 +1,61 @@
+# PHÂN TÍCH TƯ DUY BÀI TOÁN TÍNH THUẾ THU NHẬP CÁ NHÂN
+
+## 1. PHÂN TÍCH YÊU CẦU
+- Input cần nhập:
+  + Họ tên cá nhân (string)
+  + Tổng thu nhập năm (number, đơn vị triệu đồng)
+  + Số người phụ thuộc (integer)
+  
+- Công thức tính:
+  + Thu nhập chịu thuế = Tổng thu nhập - 4tr - (Số người phụ thuộc * 1.6tr)
+  + Áp dụng bậc thuế lũy tiến từng phần
+
+- Output cần hiển thị:
+  + Thông tin cá nhân
+  + Thu nhập chịu thuế
+  + Số thuế phải nộp
+
+## 2. TƯ DUY GIẢI THUẬT
+### Các bước xử lý chính:
+1. Tính thu nhập chịu thuế
+   - Kiểm tra nếu ≤ 0 → không đóng thuế
+2. Áp dụng bậc thuế:
+   - Chia nhỏ thu nhập theo từng ngưỡng
+   - Tính thuế riêng từng phần
+   - Cộng dồn kết quả
+
+### Các bậc thuế cần xử lý:
+- 0-60tr: 5%
+- 60-120tr: 10% (chỉ tính phần vượt 60tr)
+- 120-210tr: 15% 
+- 210-384tr: 20%
+- 384-624tr: 25%
+- 624-960tr: 30%
+- >960tr: 35%
+
+## 3. THIẾT KẾ CHƯƠNG TRÌNH
+### Front-end (HTML):
+- Form nhập liệu 3 trường cơ bản
+- Nút tính toán
+- Khu vực hiển thị kết quả chi tiết
+- Bảng tham khảo các bậc thuế
+
+### Back-end (JavaScript):
+1. Hàm validate input:
+   - Kiểm tra dữ liệu hợp lệ
+   - Bắt lỗi nhập liệu
+
+2. Hàm tính thuế:
+   - Xử lý tính toán theo bậc
+   - Xử lý trường hợp đặc biệt (thu nhập ≤ 0)
+
+3. Hàm hiển thị:
+   - Định dạng số tiền (toLocaleString)
+   - Highlight kết quả thuế
+
+## 4. CÁC TRƯỜNG HỢP ĐẶC BIỆT CẦN XỬ LÝ
+- Thu nhập chịu thuế âm
+- Nhập chữ vào ô số
+- Số người phụ thuộc âm
+- Thu nhập rất lớn (>1000tr)
+- Không nhập tên

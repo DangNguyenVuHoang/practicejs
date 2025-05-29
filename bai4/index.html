@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Tiền Cáp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+        }
+        .customer-type {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>TÍNH TIỀN DỊCH VỤ CÁP</h1>
+    
+    <div class="form-group">
+        <label for="customerId">Mã khách hàng:</label>
+        <input type="text" id="customerId" required>
+    </div>
+    
+    <div class="form-group">
+        <label>Loại khách hàng:</label>
+        <div class="customer-type">
+            <div class="radio-option">
+                <input type="radio" id="residential" name="customerType" value="residential" checked onclick="toggleConnectionInput()">
+                <label for="residential">Nhà dân</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="business" name="customerType" value="business" onclick="toggleConnectionInput()">
+                <label for="business">Doanh nghiệp</label>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group" id="connectionGroup">
+        <label for="connections">Số kết nối:</label>
+        <input type="number" id="connections" min="0">
+    </div>
+    
+    <div class="form-group">
+        <label for="premiumChannels">Số kênh cao cấp:</label>
+        <input type="number" id="premiumChannels" min="0" required>
+    </div>
+    
+    <button onclick="calculateBill()">TÍNH TIỀN</button>
+    
+    <div id="result"></div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
