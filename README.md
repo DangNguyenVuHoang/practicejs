@@ -1,6 +1,10 @@
 # Project Portfolio: JavaScript Mini Projects
 
 This repository contains 4 small JavaScript projects that demonstrate fundamental programming concepts and practical applications. Each project focuses on solving real-world problems using HTML, CSS, and JavaScript.
+# Main Layout:
+
+<img width="1235" alt="Ảnh màn hình 2025-05-29 lúc 12 45 35" src="https://github.com/user-attachments/assets/93f275ce-2b43-41a3-b5db-64935d1f2d51" />
+
 
 ## 📌 Project List
 
