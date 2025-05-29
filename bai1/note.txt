@@ -1,0 +1,43 @@
+Đề bài là:
+Phân tích bài toán Quản lý tuyển sinh
+Bài toán yêu cầu xác định một thí sinh có trúng tuyển hay không dựa trên:
+Điểm chuẩn của hội đồng
+Điểm 3 môn thi (không có môn nào 0 điểm)
+Điểm ưu tiên (khu vực + đối tượng)
+
+Hướng dẫn làm: 
+1. PHÂN TÍCH BÀI TOÁN
+- Input: 
+  + Điểm chuẩn (benchmark)
+  + Điểm 3 môn (subject1-3)
+  + Khu vực (A/B/C)
+  + Đối tượng (1/2/3)
+  
+- Xử lý:
+  + Tính tổng điểm = 3 môn + ưu tiên khu vực + ưu tiên đối tượng
+  + Kiểm tra:
+    * Không có môn nào 0 điểm
+    * Tổng >= điểm chuẩn
+    
+- Output:
+  + Thông báo đậu/rớt
+  + Hiển thị tổng điểm
+  + Giải thích lý do nếu rớt
+
+2. THIẾT KẾ GIAO DIỆN
+- Phân nhóm rõ ràng các input
+- Responsive cho nhiều kích thước màn hình
+- Gợi ý có thể ẩn/hiện
+- Màu sắc phân biệt trạng thái
+
+3. XỬ LÝ LOGIC
+- Ưu tiên kiểm tra điểm 0 trước
+- Tính điểm ưu tiên theo bảng quy định
+- Thông báo lỗi cụ thể
+- Định dạng số thập phân (1 chữ số)
+
+4. NÂNG CẤP TIỀM NĂNG
+- Validate input (điểm trong phạm vi cho phép)
+- Hiển thị loading khi tính toán
+- Lưu lịch sử kết quả
+- Export kết quả
