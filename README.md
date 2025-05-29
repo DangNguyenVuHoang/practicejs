@@ -38,6 +38,7 @@ These mini projects were developed to:
 
 ## 🌐 Deployment (Vercel)
 All projects are deployed on Vercel for live testing:
+
 Deploy Vercel: https://practicejs-sable.vercel.app/
 
 ## 📧 Contact Information
